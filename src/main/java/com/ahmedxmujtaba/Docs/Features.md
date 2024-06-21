@@ -132,3 +132,6 @@ small applications I name can read commands from a text file and read them as
 numbering so something ig, or just integrate them into the application
 </p>
 
+## Commands:
+
+*To be added*

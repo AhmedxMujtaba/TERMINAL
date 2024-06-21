@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Added Features.md">
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Modified Features.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Docs/Features.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Docs/Features.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" afterDir="false" />
@@ -96,6 +96,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Added Features.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Features.md" />
+    <MESSAGE value="Modified Features.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Features.md" />
   </component>
 </project>
