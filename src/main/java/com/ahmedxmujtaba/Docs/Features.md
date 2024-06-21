@@ -1,14 +1,20 @@
 # TERMINAL
 
-Basic application to manage and merge different applications im going to make for my work automation and other stuff.
+Basic application to manage and merge different applications im going to
+make for my work automation and other stuff.
+
+- [Features](#features)
+- [Commands](#commands)
+
+## Features
+
+The Features I intend to add in the program. Might change during
+development or more could be added
 
 - [Backend](#backend)
 - [Skill Tree](#skill-tree)
 - [Tasks](#tasks)
 - [Repetitive Tasks](#repetitive-tasks)
-
-
-## Feature Ideas:
 
 ### Backend
 
