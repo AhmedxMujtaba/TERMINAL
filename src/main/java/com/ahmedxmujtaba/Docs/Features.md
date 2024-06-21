@@ -111,6 +111,9 @@ E.g:
 - Get Up [5 AM] (Mon-Sat)
 - Meal 1 [3 PM] (Daily)
 
+#### Time Table
+These tasks also make a timetable, make a whole other section for these tasks.<br>
+Repettive Tasks can be marked and counted to show the monthly progress
 </p>
 
 ### Quests
