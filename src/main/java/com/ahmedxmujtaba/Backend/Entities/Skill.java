@@ -14,9 +14,10 @@ public class Skill {
         this.parentId = parentId;
     }
 
-    public Skill(String name, String description, int parentId){
+    public Skill (String name, String description, int parentId){
     this.name = name;
     this.description = description;
     this.parentId = parentId;
     }
 }
+//todo Might remove partent id later
