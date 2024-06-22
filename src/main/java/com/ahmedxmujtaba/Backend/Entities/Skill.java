@@ -29,5 +29,14 @@ public class Skill {
     public ArrayList<Skill> getSubskills() {
         return subskills;
     }
+
+    public void addSubskill(Skill skill){
+        subskills.add(skill);
+    }
+
+    public String getName() {
+        return name;
+    }
 }
-//todo Might remove partent id later
+
+//todo Might remove parent id later
