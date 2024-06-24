@@ -1,23 +1,34 @@
 package com.ahmedxmujtaba.Backend.IO;
-import java.io.*;
-import java.security.PublicKey;
 
+import com.ahmedxmujtaba.Backend.Entities.Profile;
+import com.ahmedxmujtaba.Backend.Entities.SkillTree;
+import com.ahmedxmujtaba.Backend.Entities.Task;
 
 public class IOManager {
+    //todo make the following files:
+    // tasks
+    // daily tasks
+    // profile
+    // skill tree
+    // quests
 
-    //what do we need.
-    // output the class of the skill as ser.
-    // output tasks also
+    private static String taskFileName = "Tasks.ser";
+    private static String dailyTasksFileName = "Daily_Tasks.ser";
+    private static String profileFileName = "Profile.ser";
+    private static String skillTreeFileName = "Skill_Tree.ser";
+    private static String questFileName = "Quests.ser";
 
-    public void saveFile(String fileLocation, Object object) throws IOException {
-
-        FileOutputStream fileOutputStream = new FileOutputStream(fileLocation);
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-        objectOutputStream.writeObject(object);
+    //save Tasks
+    public static boolean saveTasks(Task task){
+        if (IO.saveFile(taskFileName,task)) return true;
+        else return false;
     }
-    public Object loadFile(String fileLocation) throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream(fileLocation);
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        return objectInputStream.readObject();
+    public static boolean saveProfile(Profile profile){
+        if (IO.saveFile(profileFileName,profile)) return true;
+        else return false;
+    }
+    public static boolean saveSkillTree(SkillTree skillTree){
+        if (IO.saveFile(skillTreeFileName,skillTree)) return true;
+        else return false;
     }
 }
