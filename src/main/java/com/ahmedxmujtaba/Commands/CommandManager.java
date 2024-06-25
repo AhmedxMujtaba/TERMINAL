@@ -10,11 +10,11 @@ public class CommandManager {
         commands.put(name, command);
     }
 
-    public void executeCommand(String input) {
+    public boolean executeCommand(String input) {
         String[] parts = input.split("\\s+");
         if (parts.length == 0) {
             System.out.println("No command provided.");
-            return;
+            return false;
         }
 
         String commandName = parts[0];
@@ -23,9 +23,11 @@ public class CommandManager {
 
         Command command = commands.get(commandName);
         if (command != null) {
-            command.execute(args);
+            return command.execute(args);
+
         } else {
             System.out.println("Unknown command: " + commandName);
+            return false;
         }
     }
 }
