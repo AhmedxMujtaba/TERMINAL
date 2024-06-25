@@ -1,25 +1,22 @@
 package com.ahmedxmujtaba.Commands;
 
 import com.ahmedxmujtaba.Backend.Entities.Profile;
+import com.ahmedxmujtaba.Backend.Entities.SkillTree;
 
 
 public class LoadCommands {
-    private static CommandManager cmd;
-    public LoadCommands() {
+    private static CommandManager cmd =  new CommandManager();;
+    public LoadCommands() {}
 
-        this.cmd = new CommandManager();
-    }
-
-    private void commandLoader(){
+    public static void commandLoader(){
             //todo load profile from file
-            Profile profile = new Profile("niga");
-            cmd.registerCommand("Profile", new ProfileCommands(profile));
-
-
+            cmd.registerCommand("Profile", new ProfileCommands(new Profile("ahmed")));
+            cmd.registerCommand("Skills", new SkillCommands(new SkillTree()));
 
     }
 
     public static CommandManager getCmd() {
+        commandLoader();
         return cmd;
     }
 }
