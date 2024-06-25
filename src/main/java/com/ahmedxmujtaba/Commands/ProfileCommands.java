@@ -28,7 +28,7 @@ private Profile profile;
                             case "class", "c":
                                 // function to change class
                                 return changeClass(arguments[2]);
-                            case "description", "d":
+                            case "description", "desc":
                                 // function to change description
                                 return changeDescription(arguments[2]);
                             default:
@@ -40,7 +40,7 @@ private Profile profile;
                         System.out.println("Invalid Command: Profile -[field] [value] \n Profile -help to see options");
                         return false;
                     }
-                case "-view", "-display", "v":
+                case "-view", "-display","-v":
                     // display profile
                     displayProfile();
                     return false; //no need to save any data since none is updated
