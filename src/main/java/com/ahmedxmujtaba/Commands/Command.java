@@ -16,5 +16,5 @@ public interface Command {
 //    private static final String[] markAsDone = {"Done", "Complete", "C"};
 //    private Stack<String> previousCommands;
 
-    public void execute(String[] arguments);
+    public boolean execute(String[] arguments);
 }
