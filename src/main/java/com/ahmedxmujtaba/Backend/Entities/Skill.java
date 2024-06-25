@@ -7,14 +7,14 @@ public class Skill {
     private String name;
     private String description;
     private double totalExp;
-    private int parentId;
+    private int lvl;
     private ArrayList<Skill> subskills;
 
-    public Skill(String name, String description, double totalExp, int parentId, ArrayList<Skill> subskills){
+    public Skill(String name, String description, double totalExp, int lvl, ArrayList<Skill> subskills){
         this.name = name;
         this.description = description;
         this.totalExp = totalExp;
-        this.parentId = parentId;
+        this.lvl = lvl;
         this.subskills = subskills;
     }
 
@@ -22,8 +22,8 @@ public class Skill {
     this.name = name;
     this.description = description;
     this.totalExp = 0;
-    this.parentId = -1;
-    this.subskills = null;
+    this.lvl = 0;
+    this.subskills = new ArrayList<Skill>();
     }
 
     public ArrayList<Skill> getSubskills() {
@@ -36,6 +36,26 @@ public class Skill {
 
     public String getName() {
         return name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getTotalExp() {
+        return totalExp;
+    }
+
+    public int getLvl() {
+        return lvl;
     }
 }
 
