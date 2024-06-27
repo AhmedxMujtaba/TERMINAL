@@ -1,30 +1,43 @@
 package com.ahmedxmujtaba.Commands;
 
 import com.ahmedxmujtaba.Backend.Entities.Profile;
-import com.ahmedxmujtaba.Backend.Entities.Skill;
 import com.ahmedxmujtaba.Backend.Entities.SkillTree;
 import com.ahmedxmujtaba.Backend.Entities.TaskList;
 import com.ahmedxmujtaba.Backend.IO.IOManager;
 
-import java.util.ArrayList;
-
-
 public class LoadCommands {
     private static CommandManager cmd =  new CommandManager();
-    public LoadCommands() {}
+    private SkillTree skillTree;
+    private Profile profile;
+    private TaskList taskList;
+    public LoadCommands() {
+        commandLoader();
+    }
 
-    public static void commandLoader(){
+    public void commandLoader(){
             IOManager.makeDataDir();
-            SkillTree skillTree = IOManager.loadSkillTree();
-            Profile profile = IOManager.loadProfile();
-            TaskList taskList = IOManager.loadTasks();
+            this.skillTree = IOManager.loadSkillTree();
+            this.profile = IOManager.loadProfile();
+            this.taskList = IOManager.loadTasks();
             cmd.registerCommand("Profile", new ProfileCommands(profile));
             cmd.registerCommand("Skill", new SkillCommands(skillTree));
             cmd.registerCommand("Task", new TaskCommands(skillTree,taskList));
     }
 
-    public static CommandManager getCmd() {
+    public CommandManager getCmd() {
         commandLoader();
         return cmd;
+    }
+
+    public SkillTree getSkillTree() {
+        return skillTree;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public TaskList getTaskList() {
+        return taskList;
     }
 }
