@@ -20,30 +20,30 @@ public class TaskCommands implements Command {
     }
 
     @Override
-    public boolean execute(String[] arguments) {
+    public int execute(String[] arguments) {
         if (arguments.length > 0) {
             String subCommand = arguments[0];
             switch (subCommand) {
                 case "-add", "-a":
-                    return addTaskWithConsoleInput();
+                    return addTaskWithConsoleInput() ? 2:-1;
                 case "-addSimple", "-as":
-                    return addSimpleTask(arguments);
+                    return addSimpleTask(arguments) ? 2:-1;
                 case "-edit", "-e":
-                    return editTask(arguments);
+                    return editTask(arguments) ? 2:-1;
                 case "-delete", "-del":
-                    return deleteTask(arguments);
+                    return deleteTask(arguments) ? 2:-1;
                 case "-view", "-v", "-d", "-display":
-                    return viewTask(arguments);
+                    return viewTask(arguments) ? 2:-1;
                 case "-help", "-h":
                     displayHelp();
-                    return false;
+                    return -1;
                 default:
                     System.out.println("Invalid Command: Task -[field] [options] \n-help to see options");
-                    return false;
+                    return -1;
             }
         } else {
             System.out.println("Usage: Task <field> [options]");
-            return false;
+            return -1;
         }
     }
 

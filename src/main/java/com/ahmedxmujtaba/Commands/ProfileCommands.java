@@ -11,7 +11,7 @@ private Profile profile;
     this.profile = profile;
 }
     @Override
-    public boolean execute(String[] arguments) {
+    public int execute(String[] arguments) {
         if (arguments.length > 0) {
             String subCommand = arguments[0];
             switch (subCommand) {
@@ -21,40 +21,40 @@ private Profile profile;
                         switch (paramToChange) {
                             case "name", "n":
                                 // call function to change name
-                                return changeName(arguments[2]);
+                                return changeName(arguments[2]) ? 3 : -1;
                             case "dob":
                                 // function to change dob
-                                return changeDOB(arguments[2]);
+                                return changeDOB(arguments[2]) ? 3:-1;
                             case "class", "c":
                                 // function to change class
-                                return changeClass(arguments[2]);
+                                return changeClass(arguments[2]) ? 3:-1;
                             case "description", "desc":
                                 // function to change description
-                                return changeDescription(arguments[2]);
+                                return changeDescription(arguments[2]) ? 3:-1;
                             default:
                                 System.out.println("Invalid Command: Profile -[field] [value] \n Profile -help to see options");
-                                return false;
+                                return -1;
                         }
                     }
                     else {
                         System.out.println("Invalid Command: Profile -[field] [value] \n Profile -help to see options");
-                        return false;
+                        return -1;
                     }
                 case "-view", "-display","-v":
                     // display profile
                     displayProfile();
-                    return false; //no need to save any data since none is updated
+                    return -1; //no need to save any data since none is updated
                 case "-help", "-h":
                     // display help
                     displayHelp();
-                    return false;
+                    return -1;
                 default:
                     System.out.println("Invalid Command: Profile -[field] \n-help to see options");
-                    return false;
+                    return -1;
             }
         } else {
             System.out.println("Usage: Profile <field> [options]");
-            return false;
+            return -1;
         }
     }
 

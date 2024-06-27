@@ -13,7 +13,7 @@ public class SkillCommands implements Command {
     }
 
     @Override
-    public boolean execute(String[] arguments) {
+    public int execute(String[] arguments) {
         if (arguments.length > 0) {
             String subCommand = arguments[0];
             switch (subCommand) {
@@ -21,45 +21,45 @@ public class SkillCommands implements Command {
                     if (arguments.length > 2) {
                         String name = arguments[1];
                         String description = arguments[2];
-                        return addMainSkill(name, description);
+                        return addMainSkill(name, description) ? 1:-1;
                     } else {
                         System.out.println("Usage: -addMainSkill <name> <description>");
-                        return false;
+                        return -1;
                     }
                 case "-addSubskill", "-s":
                     if (arguments.length > 3) {
                         String parentName = arguments[1];
                         String name = arguments[2];
                         String description = arguments[3];
-                        return addSubskill(parentName, name, description);
+                        return addSubskill(parentName, name, description) ? 1:-1;
                     } else {
                         System.out.println("Usage: -addSubskill <parentName> <name> <description>");
-                        return false;
+                        return -1;
                     }
                 case "-editSkill", "-e":
                     if (arguments.length > 3) {
                         String skillName = arguments[1];
                         String field = arguments[2];
                         String newValue = arguments[3];
-                        return editSkill(skillName, field, newValue);
+                        return editSkill(skillName, field, newValue) ? 1:-1;
                     } else {
                         System.out.println("Usage: -editSkill <name> <field> <newValue>");
-                        return false;
+                        return -1;
                     }
                 case "-deleteSkill", "-del":
                     if (arguments.length > 1) {
                         String skillName = arguments[1];
-                        return deleteSkill(skillName);
+                        return deleteSkill(skillName) ? 1:-1;
                     } else {
                         System.out.println("Usage: -deleteSkill <name>");
-                        return false;
+                        return -1;
                     }
                 case "-viewTree", "-t","-tree":
                     viewTree();
-                    return false;
+                    return -1;
                 case "-help", "-h":
                     displayHelp();
-                    return false;
+                    return -1;
                 case "-display", "-d":
                     if (arguments.length > 1) {
                         String skillName = arguments[1];
@@ -67,14 +67,14 @@ public class SkillCommands implements Command {
                     } else {
                         System.out.println("Usage: -display <skill name>");
                     }
-                    return false;
+                    return -1;
                 default:
                     System.out.println("Invalid Command: Skill -[field] \n-help to see options");
-                    return false;
+                    return -1;
             }
         } else {
             System.out.println("Usage: Skill <field> [options]");
-            return false;
+            return -1;
         }
     }
 
