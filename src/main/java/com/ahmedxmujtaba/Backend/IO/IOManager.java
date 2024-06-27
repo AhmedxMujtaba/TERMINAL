@@ -3,6 +3,7 @@ package com.ahmedxmujtaba.Backend.IO;
 import com.ahmedxmujtaba.Backend.Entities.Profile;
 import com.ahmedxmujtaba.Backend.Entities.SkillTree;
 import com.ahmedxmujtaba.Backend.Entities.TaskList;
+import com.ahmedxmujtaba.Commands.LoadCommands;
 
 public class IOManager {
     //todo make the following files:
@@ -68,5 +69,26 @@ public class IOManager {
     public static void makeDataDir(){
         IO.createFolderIfNotExists(folderDir);
     }
+    public static void saveFileOnChange(int change, LoadCommands loadCommands) {
 
+        //1 if skills are changed,
+        //2 if tasks are changed,
+        //3 if Profile is changed
+        //4 if repetitive tasks are changed
+
+        switch (change){
+            case 1:
+                if(saveSkillTree(loadCommands.getSkillTree())) System.out.println("Changes Saved 'Skills'");
+                break;
+            case 2:
+                if(saveTasks(loadCommands.getTaskList())) System.out.println("Changes Saved 'Tasks'");
+                break;
+            case 3:
+                if(saveProfile(loadCommands.getProfile())) System.out.println("Changes Saved 'Profile'");
+                break;
+            default:
+                //no change
+                break;
+        }
+    }
 }
