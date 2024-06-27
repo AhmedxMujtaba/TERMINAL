@@ -1,16 +1,16 @@
 package com.ahmedxmujtaba.Backend.Utility;
 
-public class Time {
+public class DurationTime {
     private int hours;
     private int minutes;
 
-    public Time(int hours, int minutes) {
+    public DurationTime(int hours, int minutes) {
         this.hours = hours;
         this.minutes = minutes;
         normalizeTime(); // Ensure valid time format
     }
 
-    public Time(String timeString) {
+    public DurationTime(String timeString) {
         parseTime(timeString);
     }
 
@@ -54,7 +54,7 @@ public class Time {
         return String.format("%dh %dm", hours, minutes);
     }
 
-    public static Time valueOf(String timeString) {
-        return new Time(timeString);
+    public static DurationTime valueOf(String timeString) {
+        return new DurationTime(timeString);
     }
 }

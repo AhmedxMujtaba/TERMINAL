@@ -44,6 +44,9 @@ public class Date {
     public static String formatDate(LocalDate date) {
         return date.format(FORMATTER);
     }
+    public static LocalDate currentDate(){
+        return parseDate(formatDate(LocalDate.now()));
 
+    }
 }
 
