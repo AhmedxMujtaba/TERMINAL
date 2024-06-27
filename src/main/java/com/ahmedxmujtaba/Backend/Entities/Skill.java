@@ -1,8 +1,9 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Skill {
+public class Skill implements Serializable {
 
     private String name;
     private String description;

@@ -1,12 +1,13 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TaskList {
+public class TaskList implements Serializable {
     private ArrayList<Task> tasks;
 
-    public TaskList(ArrayList<Task> tasks) {
-        this.tasks = tasks;
+    public TaskList() {
+        this.tasks = new ArrayList<Task>();
     }
 
     public ArrayList<Task> getTasks() {

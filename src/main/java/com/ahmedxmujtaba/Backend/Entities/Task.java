@@ -2,11 +2,12 @@ package com.ahmedxmujtaba.Backend.Entities;
 
 import com.ahmedxmujtaba.Backend.Utility.DurationTime;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Task {
+public class Task implements Serializable {
     private int id;
     private String name;
     private String description;

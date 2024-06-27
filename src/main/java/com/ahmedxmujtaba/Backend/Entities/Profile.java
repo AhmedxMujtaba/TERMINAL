@@ -1,8 +1,9 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
+import java.io.Serializable;
 import java.util.SplittableRandom;
 
-public class Profile {
+public class Profile implements Serializable {
     private String name;
     private String description;
     private String DOB;
