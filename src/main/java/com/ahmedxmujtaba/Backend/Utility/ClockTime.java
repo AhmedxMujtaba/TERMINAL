@@ -1,5 +1,6 @@
 package com.ahmedxmujtaba.Backend.Utility;
 
+import java.awt.*;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -46,5 +47,11 @@ public class ClockTime {
             System.out.println("Invalid time format. Please provide time in HH:mm format.");
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        String a = "09:00 am";
+        LocalTime localTime = ClockTime.parseStringToLocalTime12Hour(a);
+        System.out.println(ClockTime.parseLocalTimeTo12HourString(localTime));
     }
 }

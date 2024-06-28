@@ -108,7 +108,7 @@ public class Task implements Serializable {
         return priority;
     }
 
-    public Gems getReward() {
+    public Gems getGems() {
         return gems;
     }
 
@@ -173,7 +173,7 @@ public class Task implements Serializable {
         this.priority = priority;
     }
 
-    public void setReward(Gems gems) {
+    public void setGems(Gems gems) {
         this.gems = gems;
     }
 
