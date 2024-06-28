@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Added Backend Classes">
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Reward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Reward.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -56,19 +57,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Backend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClockTime.executor": "Run",
+    "Application.IOManager.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SkillCommands.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Application.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "frontend",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ahmedxmujtaba.Main" />
+      <module name="TERMINAL" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -133,14 +148,307 @@
       <option name="project" value="LOCAL" />
       <updated>1719038114289</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Modified IO operations">
+      <option name="closed" value="true" />
+      <created>1719247820955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719247820955</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added Console.java">
+      <option name="closed" value="true" />
+      <created>1719248150434</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719248150434</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Command interface">
+      <option name="closed" value="true" />
+      <created>1719257064380</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719257064380</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated Profile.java">
+      <option name="closed" value="true" />
+      <created>1719317566616</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719317566618</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed Directory">
+      <option name="closed" value="true" />
+      <created>1719317733599</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719317733599</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Date.java">
+      <option name="closed" value="true" />
+      <created>1719317893959</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719317893959</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changed Command.java return type to boolean">
+      <option name="closed" value="true" />
+      <created>1719329167232</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719329167235</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Modified and added boolean return">
+      <option name="closed" value="true" />
+      <created>1719329378029</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1719329378029</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added LoadCommands.java">
+      <option name="closed" value="true" />
+      <created>1719329881887</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1719329881887</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Modified ProfileCommands.java to return boolean value">
+      <option name="closed" value="true" />
+      <created>1719329985247</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1719329985247</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Modified Main">
+      <option name="closed" value="true" />
+      <created>1719330081154</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719330081154</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Modified Dir">
+      <option name="closed" value="true" />
+      <created>1719331403059</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719331403060</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Removed Skill.java Parent ID, added lvl attribute">
+      <option name="closed" value="true" />
+      <created>1719336417569</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1719336417569</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added functionalities for SkillCommands.java">
+      <option name="closed" value="true" />
+      <created>1719336634649</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1719336634650</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Modified SkillTree.java added few new functions">
+      <option name="closed" value="true" />
+      <created>1719337313404</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1719337313404</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Slight Change in ProfileCommands.java description keyword">
+      <option name="closed" value="true" />
+      <created>1719337438358</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1719337438358</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added files and minor changes">
+      <option name="closed" value="true" />
+      <created>1719337571142</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1719337571142</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added Time">
+      <option name="closed" value="true" />
+      <created>1719419450797</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1719419450797</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Changed Reward to Gems.java">
+      <option name="closed" value="true" />
+      <created>1719485112884</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1719485112884</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added TaskLst to save tasks in ArrList">
+      <option name="closed" value="true" />
+      <created>1719486002775</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486002775</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Modified and added classes to manage time">
+      <option name="closed" value="true" />
+      <created>1719486301918</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486301918</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added time classes">
+      <option name="closed" value="true" />
+      <created>1719486451988</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486451988</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added time classes">
+      <option name="closed" value="true" />
+      <created>1719486521171</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486521171</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Modified to load and save files from Data dir">
+      <option name="closed" value="true" />
+      <created>1719492343758</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492343758</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Modified to return int value depending on the command type executed">
+      <option name="closed" value="true" />
+      <created>1719492415444</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492415444</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Modified LoadCommands.commandLoader to check for Data directory and added command Task">
+      <option name="closed" value="true" />
+      <created>1719492583598</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492583598</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Modified to return specific return value to identify change">
+      <option name="closed" value="true" />
+      <created>1719492662109</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492662109</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Serializable implementation, Changed TaskList constructor to self initialize a new task array list">
+      <option name="closed" value="true" />
+      <created>1719492781846</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492781846</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Modified Return type to int">
+      <option name="closed" value="true" />
+      <created>1719494307703</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494307703</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Function to save files based on int returned if execution of a Command type successful">
+      <option name="closed" value="true" />
+      <created>1719494427638</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494427638</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Made non static">
+      <option name="closed" value="true" />
+      <created>1719494510033</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494510033</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Serializable implementation">
+      <option name="closed" value="true" />
+      <created>1719576932915</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1719576932915</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Removed Console.java, added functionalities in Task and ClockTime">
+      <option name="closed" value="true" />
+      <created>1719577020279</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1719577020279</updated>
+    </task>
+    <task id="LOCAL-00040" summary="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree">
+      <option name="closed" value="true" />
+      <created>1719577190791</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1719577190791</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First Commit" />
-    <MESSAGE value="Added Features.md" />
-    <MESSAGE value="Modified Features.md" />
-    <MESSAGE value="Added Backend Classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Backend Classes" />
+    <MESSAGE value="added LoadCommands.java" />
+    <MESSAGE value="Modified ProfileCommands.java to return boolean value" />
+    <MESSAGE value="Modified Main" />
+    <MESSAGE value="Modified Dir" />
+    <MESSAGE value="Removed Skill.java Parent ID, added lvl attribute" />
+    <MESSAGE value="Added functionalities for SkillCommands.java" />
+    <MESSAGE value="Modified SkillTree.java added few new functions" />
+    <MESSAGE value="Slight Change in ProfileCommands.java description keyword" />
+    <MESSAGE value="Added files and minor changes" />
+    <MESSAGE value="Added Time" />
+    <MESSAGE value="Changed Reward to Gems.java" />
+    <MESSAGE value="Added TaskLst to save tasks in ArrList" />
+    <MESSAGE value="Added TaskCommands.java" />
+    <MESSAGE value="Added time classes" />
+    <MESSAGE value="Modified to load and save files from Data dir" />
+    <MESSAGE value="Modified to return int value depending on the command type executed" />
+    <MESSAGE value="Modified LoadCommands.commandLoader to check for Data directory and added command Task" />
+    <MESSAGE value="Modified to return specific return value to identify change" />
+    <MESSAGE value="Serializable implementation, Changed TaskList constructor to self initialize a new task array list" />
+    <MESSAGE value="Modified Return type to int" />
+    <MESSAGE value="Function to save files based on int returned if execution of a Command type successful" />
+    <MESSAGE value="Made non static" />
+    <MESSAGE value="Serializable implementation" />
+    <MESSAGE value="Removed Console.java, added functionalities in Task and ClockTime" />
+    <MESSAGE value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
   </component>
 </project>

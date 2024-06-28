@@ -1,11 +1,13 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
-import com.ahmedxmujtaba.Backend.Utility.Time;
+import com.ahmedxmujtaba.Backend.Utility.DurationTime;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class Task {
+public class Task implements Serializable {
     private int id;
     private String name;
     private String description;
@@ -13,19 +15,18 @@ public class Task {
     private Priority priority;
     private double expPoints;
     private LocalDate dueDate;
-    private String dateCreated;
-    private String timeDue;
-    private Time duration;
+    private LocalDate dateCreated;
+    private LocalTime timeDue;
+    private DurationTime duration;
     private ArrayList<Skill> skills;
     private boolean completionStatus;
-    private boolean isSubtask;
     private ArrayList<Task> subtasks;
-    private Reward reward;
+    private Gems gems;
 
     //task entity, make new task, store data in file, read data from file task.
-    public Task (int id,String name, String description, Difficulty difficulty, double expPoints, Priority priority,
-                LocalDate dueDate, String timeDue,String dateCreated, Time duration, ArrayList<Skill> skill,
-                 boolean completionStatus, boolean isSubtask, Reward reward) {
+    public Task (int id, String name, String description, Difficulty difficulty, double expPoints, Priority priority,
+                 LocalDate dueDate, LocalTime timeDue, LocalDate dateCreated, DurationTime duration, ArrayList<Skill> skill,
+                 boolean completionStatus, Gems gems) {
 
         this.id = id;
         this.name = name;
@@ -39,14 +40,14 @@ public class Task {
         this.duration = duration;
         this.skills = skill;
         this.completionStatus = completionStatus;
-        this.reward = reward;
-        this.isSubtask = isSubtask;
+        this.gems = gems;
     }
-    public Task (int id,String name, String description, Difficulty difficulty, double expPoints, Priority priority,
-                 LocalDate dueDate, String timeDue,String dateCreated, Time duration, ArrayList<Skill> skill,
-                 boolean completionStatus, boolean isSubtask, ArrayList<Task> subtasks, Reward reward) {
+    //case if task is generated for first time
+    public Task (String name, String description, Difficulty difficulty, double expPoints, Priority priority,
+                 LocalDate dueDate, LocalTime timeDue, LocalDate dateCreated, DurationTime duration, ArrayList<Skill> skill,
+                 boolean completionStatus, ArrayList<Task> subtasks, Gems gems) {
 
-        this.id = id;
+        //this.id = idGenerator();
         this.name = name;
         this.description = description;
         this.difficulty = difficulty;
@@ -58,11 +59,129 @@ public class Task {
         this.duration = duration;
         this.skills = skill;
         this.completionStatus = completionStatus;
-        this.reward = reward;
+        this.gems = gems;
         this.subtasks = subtasks;
-        this.isSubtask = isSubtask;
     }
-    public Task (String name){this.name = name;}
+    public Task (String name){
+        this.name = name;
+        //this.id = idGenerator();
 
-    //todo make getters and setters as required
+    }
+
+    //getters
+    public String getName() {
+        return this.name;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public ArrayList<Task> getSubtasks() {
+        return subtasks;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public ArrayList<Skill> getSkills() {
+        return skills;
+    }
+
+    public boolean getCompletionStatus() {
+        return completionStatus;
+    }
+
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public double getExpPoints() {
+        return expPoints;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public Gems getGems() {
+        return gems;
+    }
+
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
+    public LocalTime getTimeDue() {
+        return timeDue;
+    }
+
+    public DurationTime getDuration() {
+        return duration;
+    }
+
+    //setters
+
+    public void setSubtasks(ArrayList<Task> subtasks){
+        this.subtasks=subtasks;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSkills(ArrayList<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCompletionStatus(boolean completionStatus) {
+        this.completionStatus = completionStatus;
+    }
+
+    public void setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public void setDuration(DurationTime duration) {
+        this.duration = duration;
+    }
+
+    public void setExpPoints(double expPoints) {
+        this.expPoints = expPoints;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
+    public void setGems(Gems gems) {
+        this.gems = gems;
+    }
+
+    public void setTimeDue(LocalTime timeDue) {
+        this.timeDue = timeDue;
+    }
+
+    public void addSubtask(Task newTask) {
+        subtasks.add(newTask);
+    }
 }

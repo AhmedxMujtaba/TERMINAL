@@ -1,6 +1,8 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
-public enum Priority {
+import java.io.Serializable;
+
+public enum Priority implements Serializable {
     NONE,
     LOW,
     MEDIUM,
