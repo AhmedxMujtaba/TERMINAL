@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Added TaskLst to save tasks in ArrList">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/ClockTime.java" afterDir="false" />
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/IO/IOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/IO/IOManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/Date.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/DurationTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/LoadCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/LoadCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" afterDir="false" />
     </list>
@@ -62,21 +57,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SkillCommands.executor&quot;: &quot;Run&quot;,
-    &quot;Application.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frontend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ClockTime.executor": "Run",
+    "Application.IOManager.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SkillCommands.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "Application.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "frontend",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ahmedxmujtaba.Main" />
+      <module name="TERMINAL" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -293,22 +300,130 @@
       <option name="project" value="LOCAL" />
       <updated>1719485112884</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added TaskLst to save tasks in ArrList">
+      <option name="closed" value="true" />
+      <created>1719486002775</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486002775</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Modified and added classes to manage time">
+      <option name="closed" value="true" />
+      <created>1719486301918</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486301918</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added time classes">
+      <option name="closed" value="true" />
+      <created>1719486451988</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486451988</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added time classes">
+      <option name="closed" value="true" />
+      <created>1719486521171</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1719486521171</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Modified to load and save files from Data dir">
+      <option name="closed" value="true" />
+      <created>1719492343758</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492343758</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Modified to return int value depending on the command type executed">
+      <option name="closed" value="true" />
+      <created>1719492415444</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492415444</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Modified LoadCommands.commandLoader to check for Data directory and added command Task">
+      <option name="closed" value="true" />
+      <created>1719492583598</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492583598</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Modified to return specific return value to identify change">
+      <option name="closed" value="true" />
+      <created>1719492662109</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492662109</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Serializable implementation, Changed TaskList constructor to self initialize a new task array list">
+      <option name="closed" value="true" />
+      <created>1719492781846</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1719492781846</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Modified Return type to int">
+      <option name="closed" value="true" />
+      <created>1719494307703</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494307703</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Function to save files based on int returned if execution of a Command type successful">
+      <option name="closed" value="true" />
+      <created>1719494427638</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494427638</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Made non static">
+      <option name="closed" value="true" />
+      <created>1719494510033</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1719494510033</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Serializable implementation">
+      <option name="closed" value="true" />
+      <created>1719576932915</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1719576932915</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Removed Console.java, added functionalities in Task and ClockTime">
+      <option name="closed" value="true" />
+      <created>1719577020279</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1719577020279</updated>
+    </task>
+    <task id="LOCAL-00040" summary="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree">
+      <option name="closed" value="true" />
+      <created>1719577190791</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1719577190791</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First Commit" />
-    <MESSAGE value="Added Features.md" />
-    <MESSAGE value="Modified Features.md" />
-    <MESSAGE value="Added Backend Classes" />
-    <MESSAGE value="Modified IO operations" />
-    <MESSAGE value="Added Console.java" />
-    <MESSAGE value="Added Command interface" />
-    <MESSAGE value="Updated Profile.java" />
-    <MESSAGE value="Changed Directory" />
-    <MESSAGE value="Added Date.java" />
-    <MESSAGE value="Changed Command.java return type to boolean" />
-    <MESSAGE value="Modified and added boolean return" />
     <MESSAGE value="added LoadCommands.java" />
     <MESSAGE value="Modified ProfileCommands.java to return boolean value" />
     <MESSAGE value="Modified Main" />
@@ -321,6 +436,19 @@
     <MESSAGE value="Added Time" />
     <MESSAGE value="Changed Reward to Gems.java" />
     <MESSAGE value="Added TaskLst to save tasks in ArrList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TaskLst to save tasks in ArrList" />
+    <MESSAGE value="Added TaskCommands.java" />
+    <MESSAGE value="Added time classes" />
+    <MESSAGE value="Modified to load and save files from Data dir" />
+    <MESSAGE value="Modified to return int value depending on the command type executed" />
+    <MESSAGE value="Modified LoadCommands.commandLoader to check for Data directory and added command Task" />
+    <MESSAGE value="Modified to return specific return value to identify change" />
+    <MESSAGE value="Serializable implementation, Changed TaskList constructor to self initialize a new task array list" />
+    <MESSAGE value="Modified Return type to int" />
+    <MESSAGE value="Function to save files based on int returned if execution of a Command type successful" />
+    <MESSAGE value="Made non static" />
+    <MESSAGE value="Serializable implementation" />
+    <MESSAGE value="Removed Console.java, added functionalities in Task and ClockTime" />
+    <MESSAGE value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
   </component>
 </project>

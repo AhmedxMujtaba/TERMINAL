@@ -11,22 +11,21 @@ public class Main {
     public static void main(String[] args) {
         input();
     }
+
     public static void input(){
-        CommandManager cmd = LoadCommands.getCmd();
+        LoadCommands loadCommands = new LoadCommands();
+        CommandManager cmd = loadCommands.getCmd();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter commands (type 'exit' to quit):");
 
         while (true) {
-            System.out.print("> ");
+            System.out.print("<"+ loadCommands.getProfile().getName()+"> ");
             String input = scanner.nextLine();
             if (input.equals("exit")) {
                 break;
             }
-            if(cmd.executeCommand(input)){
-                //todo add function to save file
-            };
-
+            int change = cmd.executeCommand(input);
+            IOManager.saveFileOnChange(change, loadCommands);
         }
     }
-
 }
