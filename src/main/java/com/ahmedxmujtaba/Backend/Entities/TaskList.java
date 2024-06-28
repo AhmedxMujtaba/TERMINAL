@@ -2,6 +2,7 @@ package com.ahmedxmujtaba.Backend.Entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskList implements Serializable {
     private ArrayList<Task> tasks;
@@ -58,7 +59,7 @@ public class TaskList implements Serializable {
     public void displayTask(int id) {
         Task taskToDisplay = findTaskById(id);
         if (taskToDisplay != null) {
-            displayTask(taskToDisplay);
+            displayTaskDetails(taskToDisplay);
         } else {
             System.out.println("Task not found with ID: " + id);
         }
@@ -89,7 +90,7 @@ public class TaskList implements Serializable {
         return null;
     }
 
-    private void displayTask(Task task) {
+    public void displayTaskDetails(Task task) {
         System.out.println("ID: " + task.getId());
         System.out.println("Name: " + task.getName());
         System.out.println("Description: " + task.getDescription());
@@ -101,8 +102,39 @@ public class TaskList implements Serializable {
         System.out.println("Date Created: " + task.getDateCreated());
         System.out.println("Duration: " + task.getDuration());
         System.out.println("Completion Status: " + task.getCompletionStatus());
-        System.out.println("Reward: " + task.getReward());
-        // Display subtasks and skills if needed
+        System.out.println("Gems: " + task.getGems().getAmount());
+        System.out.println("Skills: ");
+        if(!task.getSkills().isEmpty())for (int i = 0; i<task.getSkills().size();i++) System.out.println("-"+task.getSkills().get(i).getName());
+        else System.out.println("No Skills Selected");
+        Task parent = findParentTask(task);
+        if (parent != null) {
+            System.out.println("Parent:");
+            printTask(parent, "", true);
+        }
+    }
+    public Task findParentTask(Task target) {
+        for (Task task : tasks) {
+            Task parent = findParentTaskRecursive(task, target);
+            if (parent != null) {
+                return parent;
+            }
+        }
+        return null;
+    }
+
+    private Task findParentTaskRecursive(Task current, Task target) {
+        if (current.getSubtasks() != null) {
+            for (Task subTask : current.getSubtasks()) {
+                if (subTask.equals(target)) {
+                    return current;
+                }
+                Task parent = findParentTaskRecursive(subTask, target);
+                if (parent != null) {
+                    return parent;
+                }
+            }
+        }
+        return null;
     }
 
     public int getNextAvailableId() {
@@ -125,5 +157,39 @@ public class TaskList implements Serializable {
             }
         }
         return maxId;
+    }
+
+    // New method to display all tasks and subtasks as a tree
+    public void displayAllTasksAsTree() {
+        System.out.println("Task Tree:");
+        for (Task task : tasks) {
+            printTask(task, "", true);
+        }
+    }
+
+    private void printTask(Task task, String indent, boolean last) {
+        System.out.print(indent);
+        if (last) {
+            System.out.print("└─ ");
+            indent += "   ";
+        } else {
+            System.out.print("├─ ");
+            indent += "│  ";
+        }
+        System.out.println(task.getName() + " (ID: " + task.getId() + ")");
+
+        if (task.getSubtasks() != null) {
+            List<Task> subtasks = task.getSubtasks();
+            for (int i = 0; i < subtasks.size(); i++) {
+                printTask(subtasks.get(i), indent, i == subtasks.size() - 1);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        TaskList taskList = new TaskList();
+        // Add tasks and subtasks to taskList
+
+        taskList.displayAllTasksAsTree();
     }
 }

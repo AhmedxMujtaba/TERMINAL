@@ -1,12 +1,14 @@
 package com.ahmedxmujtaba.Commands;
 
 import com.ahmedxmujtaba.Backend.Entities.*;
+import com.ahmedxmujtaba.Backend.IO.IOManager;
 import com.ahmedxmujtaba.Backend.Utility.ClockTime;
 import com.ahmedxmujtaba.Backend.Utility.Date;
 import com.ahmedxmujtaba.Backend.Utility.DurationTime;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,6 +28,9 @@ public class TaskCommands implements Command {
             switch (subCommand) {
                 case "-add", "-a":
                     return addTaskWithConsoleInput() ? 2:-1;
+                case "-t","-list","-tree","l":
+                    tasks.displayAllTasksAsTree();
+                    return -1;
                 case "-addSimple", "-as":
                     return addSimpleTask(arguments) ? 2:-1;
                 case "-edit", "-e":
@@ -95,18 +100,26 @@ public class TaskCommands implements Command {
             System.out.println("Task Time due (hh:mm AM/PM): ");
             String timeDueStr = input.nextLine();
             LocalTime timeDue = validateTime(timeDueStr);
-            DurationTime duration = validateDuration(input);
+            System.out.println("Enter duration [hour]h [min]m e.g 1h 10m: ");
+            String durationStr = input.nextLine();
+            DurationTime duration = validateDuration(durationStr);
+            input.nextLine();
             System.out.println("Skill(s) separated by comma ',' : ");
             String skillStr = input.nextLine();
             ArrayList<Skill> skills = validateSkills(skillStr);
             System.out.println("Parent Task Name: (Blank for No parent)");
             String parentName = input.nextLine();
             Task parentTask = getParent(parentName);
-            Gems gems = validateReward(input);
+            System.out.println("Gems: ");
+            String gemsStr = input.nextLine();
+            Gems gems = validateReward(gemsStr);
+            //input.close();
 
-            Task newTask = new Task(name, description, difficultyEnum, exp, priorityEnum, dueDate, timeDue, creationDate, duration, skills, false,null, gems);
+            Task newTask = new Task(name, description, difficultyEnum, exp, priorityEnum, dueDate, timeDue, creationDate, duration, skills, false,new ArrayList<>(), gems);
             if (parentTask != null) {
                 parentTask.addSubtask(newTask);
+                System.out.println("Subtask added: " + newTask.getName() + "\nParentTask: " + parentTask.getName());
+                return true;
             }
             tasks.getTasks().add(newTask);
             System.out.println("Task added: " + newTask.getName());
@@ -167,13 +180,13 @@ public class TaskCommands implements Command {
 
     private boolean viewTask(String[] arguments) {
         try {
-            int id = Integer.parseInt(arguments[1]);
-            Task task = findTaskById(id);
+            String name = arguments[1];
+            Task task = tasks.findTaskByName(name);
             if (task != null) {
-                displayTask(task);
+                tasks.displayTaskDetails(task);
                 return false; // No need to save any data since none is updated
             } else {
-                System.out.println("Task not found with ID: " + id);
+                System.out.println("Task not found with name: " + name);
                 return false;
             }
         } catch (Exception e) {
@@ -207,21 +220,6 @@ public class TaskCommands implements Command {
         return null;
     }
 
-    private void displayTask(Task task) {
-        System.out.println("Name: " + task.getName());
-        System.out.println("Description: " + task.getDescription());
-        System.out.println("Difficulty: " + task.getDifficulty());
-        System.out.println("Priority: " + task.getPriority());
-        System.out.println("Exp Points: " + task.getExpPoints());
-        System.out.println("Due Date: " + task.getDueDate());
-        System.out.println("Time Due: " + task.getTimeDue());
-        System.out.println("Date Created: " + task.getDateCreated());
-        System.out.println("Duration: " + task.getDuration());
-        System.out.println("Completion Status: " + task.getCompletionStatus());
-        System.out.println("Gems: " + task.getReward());
-        // Display subtasks and skills if needed
-    }
-
     private void displayHelp() {
         System.out.println("Task Commands:" +
                 "\n-add, -a <name> <description> <difficulty> <expPoints> <priority> <dueDate> <timeDue> <duration> <skills> <completionStatus> <reward>: Add a new task\n" +
@@ -234,6 +232,10 @@ public class TaskCommands implements Command {
     }
 
     private Difficulty validateDifficulty(String difficulty) {
+        if(difficulty.isBlank()) {
+            System.out.println("Priority set to NONE");
+            return Difficulty.NONE;
+        }
         difficulty = difficulty.toUpperCase();
         switch (difficulty) {
             case "NONE":
@@ -251,6 +253,10 @@ public class TaskCommands implements Command {
     }
 
     private Priority validatePriority(String priority) {
+        if(priority.isBlank()) {
+            System.out.println("Priority set to NONE");
+            return Priority.NONE;
+        }
         priority = priority.toUpperCase();
         switch (priority) {
             case "NONE":
@@ -268,7 +274,14 @@ public class TaskCommands implements Command {
     }
 
     private LocalDate validateDate(String date) {
-        return Date.parseDate(date);
+        LocalDate localDate;
+        try{
+             localDate = Date.parseDate(date);
+        }catch (DateTimeParseException e){
+            System.out.println("Invalid Date Parameters");
+            return null;
+        }
+        return localDate;
     }
 
     private LocalTime validateTime(String time) {
@@ -276,30 +289,29 @@ public class TaskCommands implements Command {
         return localTime;
     }
 
-    private DurationTime validateDuration(Scanner input) {
-        int count = 0;
-        while (count < 2) {
-            try {
-                System.out.println("Enter hours: ");
-                int hours = input.nextInt();
-                System.out.println("Enter minutes: ");
-                int minutes = input.nextInt();
-                return new DurationTime(hours, minutes);
-            } catch (Exception e) {
-                System.out.println("Invalid input. Please enter valid hours and minutes.");
-                input.nextLine(); // Consume invalid input
-                count++;
-            }
+    private DurationTime validateDuration(String args) {
+        if (args.isBlank()) {
+            System.out.println("Time set to 0");
+            return new DurationTime(0, 0);
         }
-        System.out.println("Duration set to zero");
-        return new DurationTime(0, 0);
+        DurationTime durationTime;
+        try
+        {
+            durationTime = new DurationTime(args);
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input. Duration set to 0");
+            return new DurationTime(0, 0);
+
+        }
+        return durationTime;
     }
 
     private ArrayList<Skill> validateSkills(String input) {
         String[] skillsArr = input.split(",");
         ArrayList<Skill> skillsList = new ArrayList<>();
         if (input.isBlank()) {
-            System.out.println("No Skills");
+            System.out.println("No Skill Selected");
             return skillsList;
         }
         for (int i = 0; i < skillsArr.length; i++) {
@@ -320,24 +332,20 @@ public class TaskCommands implements Command {
         Task foundTask = tasks.findTaskByName(name);
         if (foundTask == null) {
             System.out.println("Parent Task " + name + " not found.");
+            return null;
         }
         return foundTask;
     }
 
-    private Gems validateReward(Scanner input) {
-        int tries = 0;
-        while (tries < 2) {
-            try {
+    private Gems validateReward(String input ) {
+        if (input.isBlank()) System.out.println("Gems set to 0");
+        try {
                 System.out.println("Gems: ");
-                int quantity = input.nextInt();
+                int quantity = Integer.parseInt(input);
                 return new Gems(quantity);
             } catch (Exception e) {
-                System.out.println("Invalid input. Please enter valid quantity.");
-                input.nextLine(); // Consume invalid input
-                tries++;
+                System.out.println("Invalid input. Gems set to 0");
             }
-        }
-        System.out.println("Gems set to 0");
         return new Gems(0);
     }
 }
