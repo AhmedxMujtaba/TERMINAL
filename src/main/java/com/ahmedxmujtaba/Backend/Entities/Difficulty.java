@@ -1,6 +1,8 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
-public enum Difficulty {
+import java.io.Serializable;
+
+public enum Difficulty implements Serializable {
     NONE,
     LOW,
     MEDIUM,

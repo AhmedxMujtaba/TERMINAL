@@ -1,6 +1,8 @@
 package com.ahmedxmujtaba.Backend.Utility;
 
-public class DurationTime {
+import java.io.Serializable;
+
+public class DurationTime implements Serializable {
     private int hours;
     private int minutes;
 
