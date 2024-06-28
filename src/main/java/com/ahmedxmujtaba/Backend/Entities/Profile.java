@@ -1,27 +1,28 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
 import java.io.Serializable;
-import java.util.SplittableRandom;
 
 public class Profile implements Serializable {
     private String name;
     private String description;
     private String DOB;
-    private double Age;
+    private double age; //todo add function to calculate age
     private String _class_;
     private double exp;
-    private int level;
+    private int level; //todo add function to calculate level
+    private int gems;
 
     public Profile(String name){
         this.name = name;
     }
-    public Profile(String name, String description, String DOB, int age, String _class_, double exp, int level){
+    public Profile(String name, String description, String DOB, int age, String _class_, double exp, int level, int gems){
         this.name = name;
         this.description = description;
         this.DOB = DOB;
         this._class_ = _class_;
         this.exp = exp;
         this.level = level;
+        this.gems = gems;
     }
 //getters
     public String getName() {
@@ -33,7 +34,7 @@ public class Profile implements Serializable {
     }
 
     public double getAge() {
-        return Age;
+        return age;
     }
 
     public double getExp() {
@@ -51,9 +52,14 @@ public class Profile implements Serializable {
     public String getDOB() {
         return DOB;
     }
-//setters
+
+    public int getGems() {
+        return gems;
+    }
+
+    //setters
     public void setAge(double age) {
-        Age = age;
+        this.age = age;
     }
 
     public void setName(String name) {
@@ -78,5 +84,9 @@ public class Profile implements Serializable {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public void setGems(int gems) {
+        this.gems = gems;
     }
 }
