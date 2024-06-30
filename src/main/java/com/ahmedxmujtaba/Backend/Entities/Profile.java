@@ -1,6 +1,9 @@
 package com.ahmedxmujtaba.Backend.Entities;
 
+import com.ahmedxmujtaba.Backend.Utility.Date;
+
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Profile implements Serializable {
     private String name;
@@ -15,7 +18,7 @@ public class Profile implements Serializable {
     public Profile(String name){
         this.name = name;
     }
-    public Profile(String name, String description, String DOB, int age, String _class_, double exp, int level, int gems){
+    public Profile(String name, String description, String DOB, String _class_, double exp, int level, int gems){
         this.name = name;
         this.description = description;
         this.DOB = DOB;
@@ -23,8 +26,15 @@ public class Profile implements Serializable {
         this.exp = exp;
         this.level = level;
         this.gems = gems;
+        this.age = calculateAge();
     }
-//getters
+
+    private double calculateAge() {
+        //todo calculate date and fix the entry of a new profile in load profile
+            return Date.ageCalculation(DOB);
+    }
+
+    //getters
     public String getName() {
         return name;
     }
@@ -76,6 +86,7 @@ public class Profile implements Serializable {
 
     public void setDOB(String DOB) {
         this.DOB = DOB;
+        this.age = calculateAge();
     }
 
     public void setExp(double exp) {
