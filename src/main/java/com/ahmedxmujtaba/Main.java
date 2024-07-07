@@ -18,7 +18,6 @@ public class Main {
         LoadCommands loadCommands = new LoadCommands();
         CommandManager cmd = loadCommands.getCmd();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter commands (type 'exit' to quit):");
 
         while (true) {
             System.out.print("<"+ loadCommands.getProfile().getName()+"> ");
@@ -39,7 +38,7 @@ public class Main {
                 "  | |  | |___ | |\\ \\ | |  | | _| |_ | |\\  || | | || |____\n" +
                 "  \\_/  \\____/ \\_| \\_|\\_|  |_/ \\___/ \\_| \\_/\\_| |_/\\_____/\n");
         System.out.println("V 1.0\nCreated by Mujtaba\ngithub.com/AhmedxMujtaba\n");
-        System.out.println("Commands: \nProfile \nTask \nSkill \nTimeTable \nType '[Command] -help' for more details ");
+        System.out.println("Commands: \nProfile \nTask \nSkill \nTimeTable \nExit \nType '[Command] -help' for more details\n ");
 
     }
 
