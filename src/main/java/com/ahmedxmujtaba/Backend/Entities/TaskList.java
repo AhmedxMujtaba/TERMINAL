@@ -44,51 +44,6 @@ public class TaskList implements Serializable {
         return null;
     }
 
-    public boolean deleteTask(int id) {
-        Task taskToDelete = findTaskById(id);
-        if (taskToDelete != null) {
-            tasks.remove(taskToDelete);
-            System.out.println("Task deleted: " + taskToDelete.getName());
-            return true;
-        } else {
-            System.out.println("Task not found with ID: " + id);
-            return false;
-        }
-    }
-
-    public void displayTask(int id) {
-        Task taskToDisplay = findTaskById(id);
-        if (taskToDisplay != null) {
-            displayTaskDetails(taskToDisplay);
-        } else {
-            System.out.println("Task not found with ID: " + id);
-        }
-    }
-
-    private Task findTaskById(int id) {
-        for (Task task : tasks) {
-            Task found = findTaskByIdRecursive(task, id);
-            if (found != null) {
-                return found;
-            }
-        }
-        return null;
-    }
-
-    private Task findTaskByIdRecursive(Task current, int id) {
-        if (current.getId() == id) {
-            return current;
-        }
-        if (current.getSubtasks() != null) {
-            for (Task subTask : current.getSubtasks()) {
-                Task found = findTaskByIdRecursive(subTask, id);
-                if (found != null) {
-                    return found;
-                }
-            }
-        }
-        return null;
-    }
 
     public void displayTaskDetails(Task task) {
         System.out.println("ID: " + task.getId());
@@ -137,15 +92,6 @@ public class TaskList implements Serializable {
         return null;
     }
 
-    public int getNextAvailableId() {
-        int maxId = 0;
-        for (Task task : tasks) {
-            maxId = Math.max(maxId, task.getId());
-            int subTaskMaxId = getMaxSubtaskId(task);
-            maxId = Math.max(maxId, subTaskMaxId);
-        }
-        return maxId + 1;
-    }
 
     private int getMaxSubtaskId(Task task) {
         int maxId = 0;
@@ -176,7 +122,7 @@ public class TaskList implements Serializable {
             System.out.print("├─ ");
             indent += "│  ";
         }
-        System.out.println(task.getName() + " (ID: " + task.getId() + ")");
+        System.out.println(task.getName());
 
         if (task.getSubtasks() != null) {
             List<Task> subtasks = task.getSubtasks();
@@ -193,3 +139,4 @@ public class TaskList implements Serializable {
         taskList.displayAllTasksAsTree();
     }
 }
+//todo function to view subtask if current tasked being viewed has no parent

@@ -87,7 +87,40 @@ public class SkillTree implements Serializable {
         }
         return false;
     }
+    public ArrayList<Skill> allParentSkills(Skill leaf){
+        Skill parent;
+        ArrayList<Skill> parentSkills = new ArrayList<>();
+        while (true){
+            parent = findParentSkill(leaf);
+            if (parent != null) parentSkills.add(parent);
+            else break;
+        }
+        return parentSkills;
+    }
+    public Skill findParentSkill(Skill target) {
+        for (Skill skill : skills) {
+            Skill parent = findParentSkillRecursive(skill, target);
+            if (parent != null) {
+                return parent;
+            }
+        }
+        return null;
+    }
 
+    private Skill findParentSkillRecursive(Skill current, Skill target) {
+        if (current.getSubskills() != null) {
+            for (Skill subSkill : current.getSubskills()) {
+                if (subSkill.equals(target)) {
+                    return current;
+                }
+                Skill parent = findParentSkillRecursive(subSkill, target);
+                if (parent != null) {
+                    return parent;
+                }
+            }
+        }
+        return null;
+    }
     public ArrayList<Skill> getSkills() {
         return skills;
     }

@@ -21,6 +21,7 @@ public class ClockTime {
 
     // Method to parse a LocalTime object into a string with 12-hour format (hh:mm a)
     public static String parseLocalTimeTo12HourString(LocalTime time) {
+        if (time == null) return null;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
         return time.format(formatter);
     }

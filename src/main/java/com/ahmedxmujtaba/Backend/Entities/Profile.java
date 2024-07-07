@@ -3,16 +3,15 @@ package com.ahmedxmujtaba.Backend.Entities;
 import com.ahmedxmujtaba.Backend.Utility.Date;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 public class Profile implements Serializable {
     private String name;
     private String description;
     private String DOB;
-    private double age; //todo add function to calculate age
+    private double age;
     private String _class_;
     private double exp;
-    private int level; //todo add function to calculate level
+    private int level;
     private int gems;
 
     public Profile(String name){
@@ -30,9 +29,10 @@ public class Profile implements Serializable {
     }
 
     private double calculateAge() {
-        //todo calculate date and fix the entry of a new profile in load profile
-            return Date.ageCalculation(DOB);
+        //need to make sure age updates each time the program runs and the age is changed in calculation
+        return Date.ageCalculation(DOB);
     }
+
 
     //getters
     public String getName() {
