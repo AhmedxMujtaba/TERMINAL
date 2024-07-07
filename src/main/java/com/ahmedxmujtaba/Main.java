@@ -1,6 +1,5 @@
 package com.ahmedxmujtaba;
 
-import com.ahmedxmujtaba.Backend.Entities.Skill;
 import com.ahmedxmujtaba.Backend.IO.IOManager;
 import com.ahmedxmujtaba.Commands.CommandManager;
 import com.ahmedxmujtaba.Commands.LoadCommands;
