@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Added methods to calculate age">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Quest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/QuestList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/RepetitiveTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/RepetitiveTaskList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskCompletion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TimeTableCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/SkillTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/SkillTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/IO/IOManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/IO/IOManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/ClockTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Utility/ClockTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/LoadCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/LoadCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/ProfileCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/ProfileCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/RepetitiveTasksCommands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/SkillCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/SkillCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" afterDir="false" />
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Losts of changes I became lazy to commmit properly">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -457,11 +439,18 @@
       <option name="project" value="LOCAL" />
       <updated>1719771978733</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Losts of changes I became lazy to commmit properly">
+      <option name="closed" value="true" />
+      <created>1720372716282</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1720372716283</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Modified Main" />
     <MESSAGE value="Modified Dir" />
     <MESSAGE value="Removed Skill.java Parent ID, added lvl attribute" />
     <MESSAGE value="Added functionalities for SkillCommands.java" />
@@ -486,6 +475,7 @@
     <MESSAGE value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
     <MESSAGE value="Added gems parameter" />
     <MESSAGE value="Added methods to calculate age" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods to calculate age" />
+    <MESSAGE value="Losts of changes I became lazy to commmit properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Losts of changes I became lazy to commmit properly" />
   </component>
 </project>
