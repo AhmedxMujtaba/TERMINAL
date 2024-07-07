@@ -23,7 +23,7 @@ public class Main {
         while (true) {
             System.out.print("<"+ loadCommands.getProfile().getName()+"> ");
             String input = scanner.nextLine();
-            if (input.equals("exit")) {
+            if (input.trim().equalsIgnoreCase("exit")) {
                 break;
             }
             int change = cmd.executeCommand(input);
@@ -39,6 +39,8 @@ public class Main {
                 "  | |  | |___ | |\\ \\ | |  | | _| |_ | |\\  || | | || |____\n" +
                 "  \\_/  \\____/ \\_| \\_|\\_|  |_/ \\___/ \\_| \\_/\\_| |_/\\_____/\n");
         System.out.println("V 1.0\nCreated by Mujtaba\ngithub.com/AhmedxMujtaba\n");
+        System.out.println("Commands: \nProfile \nTask \nSkill \nTimeTable \nType '[Command] -help' for more details ");
+
     }
 
 }
