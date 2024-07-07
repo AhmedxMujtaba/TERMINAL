@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Backend/Entities/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Commands/TaskCommands.java" afterDir="false" />
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Losts of changes I became lazy to commmit properly">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ahmedxmujtaba/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,24 +54,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ClockTime.executor": "Run",
-    "Application.IOManager.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.SkillCommands.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "Application.test.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "frontend",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClockTime.executor&quot;: &quot;Run&quot;,
+    &quot;Application.IOManager.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SkillCommands.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TaskCompletion.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Application.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mark-as-done&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ahmedxmujtaba.Backend.Entities" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ahmedxmujtaba.Main" />
@@ -420,13 +423,34 @@
       <option name="project" value="LOCAL" />
       <updated>1719577190791</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added gems parameter">
+      <option name="closed" value="true" />
+      <created>1719579998583</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1719579998583</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added methods to calculate age">
+      <option name="closed" value="true" />
+      <created>1719771978733</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1719771978733</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Losts of changes I became lazy to commmit properly">
+      <option name="closed" value="true" />
+      <created>1720372716282</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1720372716283</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added LoadCommands.java" />
-    <MESSAGE value="Modified ProfileCommands.java to return boolean value" />
-    <MESSAGE value="Modified Main" />
     <MESSAGE value="Modified Dir" />
     <MESSAGE value="Removed Skill.java Parent ID, added lvl attribute" />
     <MESSAGE value="Added functionalities for SkillCommands.java" />
@@ -449,6 +473,9 @@
     <MESSAGE value="Serializable implementation" />
     <MESSAGE value="Removed Console.java, added functionalities in Task and ClockTime" />
     <MESSAGE value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="TaskCommands.java minor fixes&#10;TaskList.java added function to find parent and display tree" />
+    <MESSAGE value="Added gems parameter" />
+    <MESSAGE value="Added methods to calculate age" />
+    <MESSAGE value="Losts of changes I became lazy to commmit properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Losts of changes I became lazy to commmit properly" />
   </component>
 </project>

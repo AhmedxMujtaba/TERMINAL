@@ -1,23 +1,22 @@
 package com.ahmedxmujtaba.Backend.IO;
 
-import com.ahmedxmujtaba.Backend.Entities.Profile;
-import com.ahmedxmujtaba.Backend.Entities.SkillTree;
-import com.ahmedxmujtaba.Backend.Entities.TaskList;
+import com.ahmedxmujtaba.Backend.Entities.*;
 import com.ahmedxmujtaba.Commands.LoadCommands;
 
 public class IOManager {
-    //todo make the following files:
+    //make the following files:
     // tasks
     // daily tasks
     // profile
     // skill tree
     // quests
 
-    private static String folderDir = "../Data";
-    private static String taskFileDir = folderDir+"/Task_List.ser";
-    private static String dailyTasksFileDir = folderDir+"/Daily_Tasks.ser";
-    private static String profileFileDir = folderDir+"/Profile.ser";
-    private static String skillTreeFileDir = folderDir+"/Skill_Tree.ser";
+    private static final String folderDir = "../Data";
+    private static  final String taskFileDir = folderDir+"/Task_List.ser";
+    private static final String dailyTasksFileDir = folderDir+"/Daily_Tasks.ser";
+    private static final String profileFileDir = folderDir+"/Profile.ser";
+    private static final String skillTreeFileDir = folderDir+"/Skill_Tree.ser";
+    private static final String repetitiveTaskListDir = folderDir+"/Rep_Tasks.ser";
     private static String questFileDir = folderDir+"/Quests.ser";
 
 
@@ -32,6 +31,10 @@ public class IOManager {
     }
     public static boolean saveSkillTree(SkillTree skillTree){
         if (IO.saveFile(skillTreeFileDir,skillTree)) return true;
+        else return false;
+    }
+    public static boolean saveRepetitivetaskList(RepetitiveTaskList repetitiveTask){
+        if (IO.saveFile(repetitiveTaskListDir,repetitiveTask)) return true;
         else return false;
     }
     public static SkillTree loadSkillTree(){
@@ -51,7 +54,7 @@ public class IOManager {
         if (profile != null) return profile;
         else
         {
-            Profile newProfile = new Profile("Struggler");
+            Profile newProfile = new Profile("Unknown Hero"," ","01/01/2000","Struggler",0,0,0);
             if(saveProfile(newProfile)) System.out.println("Profile.ser Created");
             return newProfile;
         }
@@ -63,6 +66,16 @@ public class IOManager {
         {
             TaskList newTaskList = new TaskList();
             if(saveTasks(newTaskList))System.out.println("Task_List.ser Created");
+            return newTaskList;
+        }
+    }
+    public static RepetitiveTaskList loadRepetitiveTasks(){
+        RepetitiveTaskList taskList = IO.loadFile(repetitiveTaskListDir);
+        if (taskList != null) return taskList;
+        else
+        {
+            RepetitiveTaskList newTaskList = new RepetitiveTaskList();
+            if(saveRepetitivetaskList(newTaskList))System.out.println("Task_List.ser Created");
             return newTaskList;
         }
     }
@@ -86,6 +99,8 @@ public class IOManager {
             case 3:
                 if(saveProfile(loadCommands.getProfile())) System.out.println("Changes Saved 'Profile'");
                 break;
+            case 4:
+                if (saveRepetitivetaskList(loadCommands.getRepetitiveTaskList())) System.out.println("Changes save to 'Daily Task'");
             default:
                 //no change
                 break;

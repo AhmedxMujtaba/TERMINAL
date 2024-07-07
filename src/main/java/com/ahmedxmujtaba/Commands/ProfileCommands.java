@@ -1,6 +1,7 @@
 package com.ahmedxmujtaba.Commands;
 
 import com.ahmedxmujtaba.Backend.Entities.Profile;
+import com.ahmedxmujtaba.Backend.Entities.TaskCompletion;
 import com.ahmedxmujtaba.Backend.Utility.Date;
 
 import java.time.LocalDate;
@@ -104,6 +105,7 @@ private Profile profile;
         System.out.println("Name: " + profile.getName());
         System.out.println("Class: " + profile.get_class_());
         System.out.println("Lvl: " + profile.getLevel());
+        TaskCompletion.displayLevelBar(profile.getExp());
         System.out.println("Exp: " + profile.getExp());
         System.out.println("DOB: " + profile.getDOB());
         System.out.println("Age: "+profile.getAge());

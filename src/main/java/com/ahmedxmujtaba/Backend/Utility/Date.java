@@ -3,6 +3,7 @@ package com.ahmedxmujtaba.Backend.Utility;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 
 public class Date {
 
@@ -46,7 +47,21 @@ public class Date {
     }
     public static LocalDate currentDate(){
         return parseDate(formatDate(LocalDate.now()));
-
+    }
+    public static double ageCalculation(String dob) {
+        LocalDate currentDate = currentDate();
+        LocalDate dateOfBirth;
+        try {
+             dateOfBirth = parseDate(dob);
+        } catch (DateTimeParseException e) {
+            throw new RuntimeException(e);
+        }
+        if (dateOfBirth != null && currentDate != null) {
+            long daysBetween = ChronoUnit.DAYS.between(dateOfBirth, currentDate);
+            return daysBetween / 365.25; // 365.25 accounts for leap years
+        } else {
+            return 0.0;
+        }
     }
 }
 

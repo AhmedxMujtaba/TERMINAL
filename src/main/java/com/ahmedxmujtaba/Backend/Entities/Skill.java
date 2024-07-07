@@ -58,6 +58,13 @@ public class Skill implements Serializable {
     public int getLvl() {
         return lvl;
     }
+
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
+    }
+
+    public void setTotalExp(double totalExp) {
+        this.totalExp = totalExp;
+    }
 }
 
-//todo Might remove parent id later

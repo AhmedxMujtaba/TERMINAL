@@ -2,6 +2,7 @@ package com.ahmedxmujtaba.Commands;
 
 import com.ahmedxmujtaba.Backend.Entities.Skill;
 import com.ahmedxmujtaba.Backend.Entities.SkillTree;
+import com.ahmedxmujtaba.Backend.Entities.TaskCompletion;
 
 import java.util.List;
 
@@ -20,7 +21,12 @@ public class SkillCommands implements Command {
                 case "-addMainSkill", "-ms":
                     if (arguments.length > 2) {
                         String name = arguments[1];
-                        String description = arguments[2];
+                        StringBuilder stringBuilder = new StringBuilder();
+                        for (int i = 1; i < arguments.length; i++) {
+                            stringBuilder.append(arguments[i]);
+                            stringBuilder.append(" ");
+                        }
+                        String description = stringBuilder.toString();
                         return addMainSkill(name, description) ? 1:-1;
                     } else {
                         System.out.println("Usage: -addMainSkill <name> <description>");
@@ -30,7 +36,12 @@ public class SkillCommands implements Command {
                     if (arguments.length > 3) {
                         String parentName = arguments[1];
                         String name = arguments[2];
-                        String description = arguments[3];
+                        StringBuilder stringBuilder = new StringBuilder();
+                        for (int i = 3; i < arguments.length; i++) {
+                            stringBuilder.append(arguments[i]);
+                            stringBuilder.append(" ");
+                        }
+                        String description = stringBuilder.toString();
                         return addSubskill(parentName, name, description) ? 1:-1;
                     } else {
                         System.out.println("Usage: -addSubskill <parentName> <name> <description>");
@@ -40,7 +51,17 @@ public class SkillCommands implements Command {
                     if (arguments.length > 3) {
                         String skillName = arguments[1];
                         String field = arguments[2];
-                        String newValue = arguments[3];
+                        StringBuilder stringBuilder = new StringBuilder();
+                        String newValue;
+                        if (arguments.length>3)
+                        {
+                            for (int i = 2; i < arguments.length; i++) {
+                                stringBuilder.append(arguments[i]);
+                                stringBuilder.append(" ");
+                            }
+                            newValue = stringBuilder.toString();
+                        }
+                        else newValue = arguments[3];
                         return editSkill(skillName, field, newValue) ? 1:-1;
                     } else {
                         System.out.println("Usage: -editSkill <name> <field> <newValue>");
@@ -162,8 +183,9 @@ public class SkillCommands implements Command {
         }
         System.out.println(
                 "\nName: "+skill.getName()
-                +"\nLvl: "+skill.getLvl()
-                +"\nExp: "+skill.getTotalExp()
+                +"\nLvl: "+skill.getLvl());
+                TaskCompletion.displayLevelBar(skill.getTotalExp());
+        System.out.println("\nExp: "+skill.getTotalExp()
                 +"\nDescription: "+skill.getDescription()
                 +"\nSub-skills: ");
         printSkill(skill,"",true);
