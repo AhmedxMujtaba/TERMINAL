@@ -22,6 +22,7 @@ public class LoadCommands {
             this.profile = IOManager.loadProfile();
             //adding calculation of age here so each time program is run, the age is updated
             profile.setAge(profile.calculateAge());
+
             this.repetitiveTaskList = IOManager.loadRepetitiveTasks();
 
             this.taskList = IOManager.loadTasks();
