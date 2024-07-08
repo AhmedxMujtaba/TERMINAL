@@ -1,0 +1,1 @@
+java -jar TERMINAL1.jar
