@@ -11,7 +11,7 @@ public class IOManager {
     // skill tree
     // quests
 
-    private static final String folderDir = "../Data";
+    private static final String folderDir = IO.getCurrentDirectory()+"/Data";
     private static  final String taskFileDir = folderDir+"/Task_List.ser";
     private static final String dailyTasksFileDir = folderDir+"/Daily_Tasks.ser";
     private static final String profileFileDir = folderDir+"/Profile.ser";
