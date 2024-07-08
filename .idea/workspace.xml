@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TERMINAL:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="changed display">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="df3c67e2-ad24-4dbc-a617-2246f1da8e18" name="Changes" comment="Fixed issue age not updating">
+      <change afterPath="$PROJECT_DIR$/Compiled/TERMINAL1-0_jar/TERMINAL1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compiled/TERMINAL1-0_jar/run-Jdk21.cmd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +43,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mark-as-done" />
+        <entry key="$PROJECT_DIR$" value="develope" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,18 +74,25 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "develope",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/noorf/IdeaProjects/TERMINAL/Compiled/TERMINAL1-0_jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\noorf\IdeaProjects\TERMINAL\Compiled\TERMINAL1-0_jar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\noorf\IdeaProjects\TERMINAL\Compiled\TERMINAL1-0_jar" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ahmedxmujtaba.Backend.Entities" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ahmedxmujtaba.Main" />
       <module name="TERMINAL" />
       <method v="2">
@@ -102,14 +115,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718953425588</updated>
-    </task>
-    <task id="LOCAL-00001" summary="First Commit">
-      <option name="closed" value="true" />
-      <created>1718953948124</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1718953948124</updated>
     </task>
     <task id="LOCAL-00002" summary="Added Features.md">
       <option name="closed" value="true" />
@@ -471,13 +476,42 @@
       <option name="project" value="LOCAL" />
       <updated>1720373249958</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="resolved Conflicts">
+      <option name="closed" value="true" />
+      <created>1720374352427</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1720374352427</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Fixed Minor issue">
+      <option name="closed" value="true" />
+      <created>1720374557701</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1720374557701</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Fixed Minor issue">
+      <option name="closed" value="true" />
+      <created>1720436528088</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1720436528088</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Fixed issue age not updating">
+      <option name="closed" value="true" />
+      <created>1720437668735</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1720437668735</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed Skill.java Parent ID, added lvl attribute" />
-    <MESSAGE value="Added functionalities for SkillCommands.java" />
-    <MESSAGE value="Modified SkillTree.java added few new functions" />
     <MESSAGE value="Slight Change in ProfileCommands.java description keyword" />
     <MESSAGE value="Added files and minor changes" />
     <MESSAGE value="Added Time" />
@@ -500,6 +534,9 @@
     <MESSAGE value="Added methods to calculate age" />
     <MESSAGE value="Losts of changes I became lazy to commmit properly" />
     <MESSAGE value="changed display" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed display" />
+    <MESSAGE value="resolved Conflicts" />
+    <MESSAGE value="Fixed Minor issue" />
+    <MESSAGE value="Fixed issue age not updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue age not updating" />
   </component>
 </project>

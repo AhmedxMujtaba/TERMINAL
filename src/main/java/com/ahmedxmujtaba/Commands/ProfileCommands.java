@@ -108,7 +108,7 @@ private Profile profile;
         TaskCompletion.displayLevelBar(profile.getExp());
         System.out.println("Exp: " + profile.getExp());
         System.out.println("DOB: " + profile.getDOB());
-        System.out.println("Age: "+profile.getAge());
+        System.out.printf("Age: %.1f%n", profile.getAge());
         System.out.println("Description: " + profile.getDescription());
     }
 }

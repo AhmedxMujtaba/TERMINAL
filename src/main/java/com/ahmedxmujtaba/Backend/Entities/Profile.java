@@ -28,7 +28,7 @@ public class Profile implements Serializable {
         this.age = calculateAge();
     }
 
-    private double calculateAge() {
+    public double calculateAge() {
         //need to make sure age updates each time the program runs and the age is changed in calculation
         return Date.ageCalculation(DOB);
     }
