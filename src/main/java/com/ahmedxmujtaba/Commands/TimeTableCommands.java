@@ -63,7 +63,7 @@ public class TimeTableCommands implements Command {
         Scanner input = new Scanner(System.in);
         try {
             System.out.println("Task Name: ");
-            String name = input.nextLine();
+            String name = input.nextLine().trim();
             System.out.println("Task Description: ");
             String description = input.nextLine();
             System.out.println("Task Difficulty (NONE, LOW, MEDIUM, HIGH): ");
@@ -175,7 +175,7 @@ public class TimeTableCommands implements Command {
                 String paramToChange = arguments[2];
                 switch (paramToChange) {
                     case "name":
-                        task.setName(arguments[3]);
+                        task.setName(arguments[3].trim());
                         break;
                     case "description":
                         StringBuilder stringBuilder = new StringBuilder();
@@ -237,11 +237,11 @@ public class TimeTableCommands implements Command {
     }
     private boolean deleteTask(String[] arguments) {
         try {
-            String name = buildString(arguments,1);
+            String name = buildString(arguments,1).trim();
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.getTasks().remove(task);
-                System.out.println("Task deleted: " + task.getName());
+                System.out.println("Task deleted: " + name);
                 return true;
             } else {
                 System.out.println("Task not found with Name: " + name);
@@ -264,7 +264,7 @@ public class TimeTableCommands implements Command {
     private boolean viewTask(String[] arguments) {
         try {
             String newValue = buildString(arguments,1);
-            String name = newValue;
+            String name = newValue.trim();
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.displayTaskDetails(task);
