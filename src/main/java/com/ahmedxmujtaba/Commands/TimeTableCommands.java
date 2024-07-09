@@ -27,14 +27,12 @@ public class TimeTableCommands implements Command {
             String subCommand = arguments[0];
             switch (subCommand) {
                 case "-tt","-timetable":
-                    displayRepetitveTasks();
+                    displayRepetitiveTasks();
                     return -1;
                 case "-add", "-a":
                     return addRepetitiveTask() ? 4:-1;
                 case "-check","-c","-complete":
                     return checkTask(arguments) ? 4:-1;
-                case "-incomplete", "-in","-uncheck","-un":
-                    return uncheckTask(arguments) ? 4:-1;
                 case "-edit", "-e":
                     return editTask(arguments) ? 4:-1;
                 case "-delete", "-del":
@@ -53,7 +51,7 @@ public class TimeTableCommands implements Command {
             return -1;
         }
     }
-    private void displayRepetitveTasks() {
+    private void displayRepetitiveTasks() {
         for (int i = 0; i < tasks.getTasks().size(); i++) {
             tasks.displayFormatedTimeTabelUsingRepetitiveTasks();
         }
@@ -63,7 +61,8 @@ public class TimeTableCommands implements Command {
         Scanner input = new Scanner(System.in);
         try {
             System.out.println("Task Name: ");
-            String name = input.nextLine();
+            String name = input.nextLine().trim();
+            if (!validateName(name)) return false;
             System.out.println("Task Description: ");
             String description = input.nextLine();
             System.out.println("Task Difficulty (NONE, LOW, MEDIUM, HIGH): ");
@@ -101,7 +100,17 @@ public class TimeTableCommands implements Command {
             return false;
         }
     }
-
+    private boolean validateName(String name){
+        if (name.isBlank()) {
+            System.out.println("Name cannot be blank");
+            return false;
+        } else if (name.contains(" ")) {
+            System.out.println("Name cannot have space Use '_' or '-' instead ");
+            return false;
+        }
+        else
+            return true;
+    }
     private boolean checkTask(String[] arguments)
     {
         if (arguments.length > 1){
@@ -132,7 +141,7 @@ public class TimeTableCommands implements Command {
                 System.out.println("Task: " + taskName + " Not found 404");
                 return false;
             }
-            if(task.getCompletionStatus() == false)
+            if(!task.getCompletionStatus())
                 return false;
             else
             {
@@ -145,7 +154,6 @@ public class TimeTableCommands implements Command {
         System.out.println("Unable to Mark status to false, check input");
         return false;
     }
-
 
     private double validateExp(String expStr) {
         double exp;
@@ -175,8 +183,12 @@ public class TimeTableCommands implements Command {
                 String paramToChange = arguments[2];
                 switch (paramToChange) {
                     case "name":
-                        task.setName(arguments[3]);
-                        break;
+                        if (validateName(arguments[3].trim())) {
+                            task.setName(arguments[3].trim());
+                            System.out.println("Task updated: " + task.getName());
+                            return true;
+                        }
+                        else return false;
                     case "description":
                         StringBuilder stringBuilder = new StringBuilder();
                         String newValue;
@@ -184,7 +196,7 @@ public class TimeTableCommands implements Command {
                             stringBuilder.append(arguments[i]);
                             stringBuilder.append(" ");
                         }
-                        newValue = stringBuilder.toString();
+                        newValue = stringBuilder.toString().trim();
                         task.setDescription(newValue);
                         break;
                     case "priority":
@@ -222,8 +234,6 @@ public class TimeTableCommands implements Command {
                         System.out.println("Invalid field to edit. \n-help to see options");
                         return false;
                 }
-
-
                 System.out.println("Task updated: " + task.getName());
                 return true;
             } else {
@@ -235,14 +245,13 @@ public class TimeTableCommands implements Command {
             return false;
         }
     }
-
     private boolean deleteTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String name = arguments[1].trim();
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.getTasks().remove(task);
-                System.out.println("Task deleted: " + task.getName());
+                System.out.println("Task deleted: " + name);
                 return true;
             } else {
                 System.out.println("Task not found with Name: " + name);
@@ -254,9 +263,17 @@ public class TimeTableCommands implements Command {
         }
     }
 
+    private String buildString(String arguments[],int startArg){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = startArg; i < arguments.length; i++) {
+            stringBuilder.append(arguments[i]);
+            stringBuilder.append(" ");
+        }
+        return stringBuilder.toString();
+    }
     private boolean viewTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String name =  arguments[1].trim();
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.displayTaskDetails(task);

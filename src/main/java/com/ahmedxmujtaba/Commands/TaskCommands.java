@@ -10,6 +10,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TaskCommands implements Command {
     private TaskList tasks;
@@ -138,7 +140,9 @@ public class TaskCommands implements Command {
         Scanner input = new Scanner(System.in);
         try {
             System.out.println("Task Name: ");
-            String name = input.nextLine();
+            String name = input.nextLine().trim();
+            //if name not valid just exit
+            if (!validateName(name)) return false;
             System.out.println("Task Description: ");
             String description = input.nextLine();
             System.out.println("Task Difficulty (NONE, LOW, MEDIUM, HIGH): ");
@@ -187,6 +191,18 @@ public class TaskCommands implements Command {
             return false;
         }
     }
+    
+    private boolean validateName(String name){
+        if (name.isBlank()) {
+            System.out.println("Name cannot be blank");
+            return false;
+        } else if (name.contains(" ")) {
+            System.out.println("Name cannot have space Use '_' or '-' instead ");
+            return false;
+        }
+        else
+            return true;
+    }
 
     private double validateExp(String expStr) {
         double exp;
@@ -202,7 +218,25 @@ public class TaskCommands implements Command {
             return 0;
         }
     }
+    public static String extractStringInBrackets(String input) {
+        // Define the regular expression pattern to match text inside [ ]
+        String regex = "\\[(.*?)\\]";
 
+        // Create a Pattern object
+        Pattern pattern = Pattern.compile(regex);
+
+        // Create a Matcher object
+        Matcher matcher = pattern.matcher(input);
+
+        // Find and return the string inside the brackets
+        if (matcher.find()) {
+            return matcher.group(1).trim(); // Return the matched string without brackets
+        } else {
+            return "Name should be in Square Brackets [name]";
+        }
+    }
+
+    //todo make that skill and task name cannot have space
     private boolean editTask(String[] arguments) {
         try {
             String name = arguments[1];
@@ -216,8 +250,11 @@ public class TaskCommands implements Command {
                 String paramToChange = arguments[2];
                 switch (paramToChange) {
                     case "name":
-                        task.setName(arguments[3]);
-                        break;
+                        if (validateName(arguments[3].trim())) {
+                            task.setName(arguments[3].trim());
+                            return true;
+                        }
+                        else return false;
                     case "description":
                         StringBuilder stringBuilder = new StringBuilder();
                         String newValue;
@@ -299,7 +336,7 @@ public class TaskCommands implements Command {
             Task task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.getTasks().remove(task);
-                System.out.println("Task deleted: " + task.getName());
+                System.out.println("Task deleted: " + name);
                 return true;
             } else {
                 System.out.println("Task not found with Name: " + name);
@@ -311,9 +348,19 @@ public class TaskCommands implements Command {
         }
     }
 
+    private String buildString(String arguments[],int startArg){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = startArg; i < arguments.length; i++) {
+            stringBuilder.append(arguments[i]);
+            stringBuilder.append(" ");
+        }
+        return stringBuilder.toString();
+    }
+
     private boolean viewTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String newValue = arguments[1];
+            String name = newValue.trim();
             Task task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.displayTaskDetails(task);

@@ -23,9 +23,12 @@ public class Main {
             String input = scanner.nextLine();
             if (input.trim().equalsIgnoreCase("exit")) {
                 break;
+            } else if (input.trim().isBlank()) {
+                continue;
             }
             int change = cmd.executeCommand(input);
             IOManager.saveFileOnChange(change, loadCommands);
+            System.out.println();
         }
     }
     public static void displayInfo(){
@@ -37,7 +40,7 @@ public class Main {
                 "  | |  | |___ | |\\ \\ | |  | | _| |_ | |\\  || | | || |____\n" +
                 "  \\_/  \\____/ \\_| \\_|\\_|  |_/ \\___/ \\_| \\_/\\_| |_/\\_____/\n");
         System.out.println("V 1.0\nCreated by Mujtaba\ngithub.com/AhmedxMujtaba\n");
-        System.out.println("Commands: \nProfile \nTask \nSkill \nTimeTable \nExit \nType '[Command] -help' for more details\n ");
+        System.out.println("Commands: \nProfile \nTask \nSkill \nTimeTable \nExit \nType '[Command] -help' for more details");
 
     }
 
