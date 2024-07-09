@@ -235,10 +235,9 @@ public class TimeTableCommands implements Command {
             return false;
         }
     }
-
     private boolean deleteTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String name = buildString(arguments,1);
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.getTasks().remove(task);
@@ -254,9 +253,18 @@ public class TimeTableCommands implements Command {
         }
     }
 
+    private String buildString(String arguments[],int startArg){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = startArg; i < arguments.length; i++) {
+            stringBuilder.append(arguments[i]);
+            stringBuilder.append(" ");
+        }
+        return stringBuilder.toString();
+    }
     private boolean viewTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String newValue = buildString(arguments,1);
+            String name = newValue;
             RepetitiveTask task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.displayTaskDetails(task);

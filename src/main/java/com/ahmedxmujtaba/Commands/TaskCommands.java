@@ -295,7 +295,7 @@ public class TaskCommands implements Command {
 
     private boolean deleteTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String name = buildString(arguments,1);
             Task task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.getTasks().remove(task);
@@ -311,9 +311,18 @@ public class TaskCommands implements Command {
         }
     }
 
+    private String buildString(String arguments[],int startArg){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = startArg; i < arguments.length; i++) {
+            stringBuilder.append(arguments[i]);
+            stringBuilder.append(" ");
+        }
+        return stringBuilder.toString();
+    }
     private boolean viewTask(String[] arguments) {
         try {
-            String name = arguments[1];
+            String newValue = buildString(arguments,1);
+            String name = newValue;
             Task task = tasks.findTaskByName(name);
             if (task != null) {
                 tasks.displayTaskDetails(task);
